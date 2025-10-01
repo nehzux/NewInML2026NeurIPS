@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <script type="text/javascript">
+        document.documentElement.className = "js";
+    </script>
+
+    <title>New In ML at NeurIPS 2025</title>
+
+    <link rel="stylesheet" id="base-css" href="./css/base.css?ver=6.0.2" type="text/css" media="none"
+        onload="media='all'" />
+
+    <script type="text/javascript">
+        let jqueryParams = [],
+            jQuery = function (r) {
+                return (jqueryParams = [...jqueryParams, r]), jQuery;
+            },
+            $ = function (r) {
+                return (jqueryParams = [...jqueryParams, r]), $;
+            };
+        (window.jQuery = jQuery), (window.$ = jQuery);
+        let customHeadScripts = !1;
+        (jQuery.fn = jQuery.prototype = {}),
+            ($.fn = jQuery.prototype = {}),
+            (jQuery.noConflict = function (r) {
+                if (window.jQuery)
+                    return (
+                        (jQuery = window.jQuery), ($ = window.jQuery), (customHeadScripts = !0), jQuery.noConflict
+                    );
+            }),
+            (jQuery.ready = function (r) {
+                jqueryParams = [...jqueryParams, r];
+            }),
+            ($.ready = function (r) {
+                jqueryParams = [...jqueryParams, r];
+            }),
+            (jQuery.load = function (r) {
+                jqueryParams = [...jqueryParams, r];
+            }),
+            ($.load = function (r) {
+                jqueryParams = [...jqueryParams, r];
+            }),
+            (jQuery.fn.ready = function (r) {
+                jqueryParams = [...jqueryParams, r];
+            }),
+            ($.fn.ready = function (r) {
+                jqueryParams = [...jqueryParams, r];
+            });
+    </script>
+
+    <style id="wp-block-library-theme-inline-css" type="text/css"></style>
+    <style id="global-styles-inline-css" type="text/css"></style>
+    <link rel="stylesheet" id="ts_fab_css-css" href="./css/ts-fab.min.css?ver=1.5" type="text/css" media="all" />
+    <link rel="stylesheet" id="divi-style-css" href="./css/style-static.min.css?ver=4.17.6" type="text/css"
+        media="all" />
+    <script type="text/javascript" src="./js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+    <script type="text/javascript" src="./js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+    <script type="text/javascript" id="jquery-js-after">
+        jqueryParams.length &&
+            $.each(jqueryParams, function (e, r) {
+                if ("function" == typeof r) {
+                    var n = String(r);
+                    n.replace("$", "jQuery");
+                    var a = new Function("return " + n)();
+                    $(document).ready(a);
+                }
+            });
+    </script>
+    <script type="text/javascript" src="./js/ts-fab.min.js?ver=1.5" id="ts_fab_js-js"></script>
+
+    <link rel="shortcut icon" href="img/newinml-fav.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <style>
+        .dropdown-menu {
+            width: 250px !important;
+        }
+
+        .dropdown-menu li a {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body
+    class="page-template-default page page-id-324 et_divi_builder et_pb_button_helper_class et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_svg_logo et_pb_footer_columns4 et_cover_background et_pb_gutter linux et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden">
+        <defs>
+            <filter id="wp-duotone-dark-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0.49803921568627" />
+                    <feFuncG type="table" tableValues="0 0.49803921568627" />
+                    <feFuncB type="table" tableValues="0 0.49803921568627" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg>
+    <div id="page-container">
+        <!-- ***************************************************** Workshop header ***************************************************** -->
+
+        <header id="main-header" data-height-onload="66">
+            <div class="container clearfix et_menu_container">
+                <div class="logo_container">
+                    <span class="logo_helper"></span>
+                    <a href="#">
+                        <img src="./img/neurips.png" width="93" height="43" alt="NeurIPS" id="logo"
+                            data-height-percentage="54" />
+                    </a>
+                </div>
+                <div id="et-top-navigation" data-height="66" data-fixed-height="40">
+                    <nav id="top-menu-nav">
+                        <ul id="top-menu" class="nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Previous Workshops </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="https://newinml.github.io/NewInML2025ICML/">NewInML at ICML 2025</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://nehzux.github.io/NewInML2023NeurIPS">NewInML at NeurIPS
+                                            2024</a>
+                                    </li>
+                                    <li><a href="newinml2023.html">NewInML at NeurIPS 2023</a></li>
+                                    <li>
+                                        <a href="https://nehzux.github.io/NewInML2022NeurIPS/">NewInML at NeurIPS
+                                            2022</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://ablacan.github.io/NewInML2022_ICML/">NewInML at ICML 2022</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://nehzux.github.io/NewInML2019/">NewInML at NeurIPS 2019</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div id="et_mobile_nav_menu">
+                        <div class="mobile_nav closed">
+                            <span class="select_page">Select Page</span>
+                            <span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- #main-header -->
+        <div id="et-main-area">
+            <div id="main-content">
+                <article id="post-324" class="post-324 page type-page status-publish hentry">
+                    <div class="entry-content">
+                        <div class="et-l et-l--post">
+                            <div class="et_builder_inner_content et_pb_gutters3">
+                                <!-- ***************************************************** Workshop Brief ***************************************************** -->
+                                <div class="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular">
+                                    <div class="et_pb_row et_pb_row_0 et_pb_equal_columns">
+                                        <div
+                                            class="et_pb_column et_pb_column_4_4 et_pb_column_0 et_pb_css_mix_blend_mode_passthrough et-last-child">
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_0 et_animated et_pb_text_align_left et_pb_bg_layout_dark">
+                                                <div class="et_pb_text_inner">
+                                                    <h1>
+                                                        <span style="font-family: inherit; font-size: xx-large">New In
+                                                            ML at NeurIPS 2025</span>
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="et_pb_module et_pb_text et_pb_text_1 et_animated et_pb_text_align_left et_pb_bg_layout_dark">
+                                                <div class="et_pb_text_inner">
+                                                    <p>
+                                                        <span style="font-family: inherit; font-size: large">
+                                                            NewInML will be held at NeurIPS 2025 on
+                                                            <span style="color: red">December 2</span>, 2025! 
+                                                            Location: <span style="color: red">San Diego</span>.
+                                                            <br /><br />
+                                                            
+                                                            <strong style="font-size: x-large; color: #ffd700;">
+                                                                🚧 Website Under Construction 🚧
+                                                            </strong>
+                                                            <br /><br />
+                                                            
+                                                            We are currently updating the website with more details. 
+                                                            <strong>Stay tuned!</strong>
+                                                            <br /><br />
+                                                            
+                                                            If you have any questions, please contact us by:<br />
+                                                            📧 Email: <a href="mailto:contactnewinml@gmail.com" 
+                                                                style="color: #90EE90;">contactnewinml@gmail.com</a><br />
+                                                            💬 Discord: <a href="https://hovqr.to/981d36ee"
+                                                                target="_blank" rel="noopener noreferrer"
+                                                                style="color: #90EE90;">Join our Discord</a>
+                                                            <br />
+                                                            <img src="hovercode.png" alt="Discord QR Code"
+                                                                style="width:120px; height:120px; margin-top:10px;">
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <footer id="main-footer">
+                <div id="footer-bottom">
+                    <div class="container clearfix"></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div id="global-footer-content">
+        <div id="global-footer-content-inner">
+            <script src="./js/OWC-emergency-banner.js" type="text/javascript" async></script>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var et_animation_data = [
+            {
+                class: "et_pb_text_0",
+                style: "flipTop",
+                repeat: "once",
+                duration: "1000ms",
+                delay: "0ms",
+                intensity: "50%",
+                starting_opacity: "0%",
+                speed_curve: "ease-in-out",
+            },
+            {
+                class: "et_pb_text_1",
+                style: "flipTop",
+                repeat: "once",
+                duration: "1000ms",
+                delay: "50ms",
+                intensity: "50%",
+                starting_opacity: "0%",
+                speed_curve: "ease-in-out",
+            }
+        ];
+    </script>
+    <link rel="stylesheet" id="wp-block-library-css" href="./css/style.min.css?ver=6.0.2" type="text/css" media="none"
+        onload="media='all'" />
+    <script type="text/javascript" src="./js/current-menu-item.js?ver=1.0" id="current.menu-js"></script>
+    <script type="text/javascript" id="divi-custom-script-js-extra">
+        /* <![CDATA[ */
+        var DIVI = { item_count: "%d Item", items_count: "%d Items" };
+        var et_builder_utils_params = {
+            condition: { diviTheme: true, extraTheme: false },
+            scrollLocations: ["app", "top"],
+            builderScrollLocations: { desktop: "app", tablet: "app", phone: "app" },
+            onloadScrollLocation: "app",
+            builderType: "fe",
+        };
+        var et_frontend_scripts = { builderCssContainerPrefix: "#et-boc", builderCssLayoutPrefix: "#et-boc .et-l" };
+        var et_pb_custom = {
+            ajaxurl: "https:\/\/tripods.cis.cornell.edu\/wp-admin\/admin-ajax.php",
+            images_uri: "https:\/\/tripods.cis.cornell.edu\/wp-content\/themes\/divi\/images",
+            builder_images_uri:
+                "https:\/\/tripods.cis.cornell.edu\/wp-content\/themes\/divi\/includes\/builder\/images",
+            et_frontend_nonce: "2a09c65839",
+            subscription_failed: "Please, check the fields below to make sure you entered the correct information.",
+            et_ab_log_nonce: "d87dd1361e",
+            fill_message: "Please, fill in the following fields:",
+            contact_error_message: "Please, fix the following errors:",
+            invalid: "Invalid email",
+            captcha: "Captcha",
+            prev: "Prev",
+            previous: "Previous",
+            next: "Next",
+            wrong_captcha: "You entered the wrong number in captcha.",
+            wrong_checkbox: "Checkbox",
+            ignore_waypoints: "no",
+            is_divi_theme_used: "1",
+            widget_search_selector: ".widget_search",
+            ab_tests: [],
+            is_ab_testing_active: "",
+            page_id: "324",
+            unique_test_id: "",
+            ab_bounce_rate: "5",
+            is_cache_plugin_active: "yes",
+            is_shortcode_tracking: "",
+            tinymce_uri:
+                "https:\/\/tripods.cis.cornell.edu\/wp-content\/themes\/divi\/includes\/builder\/frontend-builder\/assets\/vendors",
+            waypoints_options: [],
+        };
+        var et_pb_box_shadow_elements = [];
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="./js/scripts.min.js?ver=4.17.6" id="divi-custom-script-js"></script>
+    <script type="text/javascript" src="./js/common.js?ver=4.17.6" id="et-core-common-js"></script>
+</body>
+
+</html>
+
