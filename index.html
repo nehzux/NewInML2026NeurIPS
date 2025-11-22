@@ -84,6 +84,174 @@
         .dropdown-menu li a {
             white-space: nowrap;
         }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation styling */
+        #top-menu li a {
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        #top-menu li a:hover {
+            color: #e74c3c;
+        }
+
+        /* Section styling */
+        .content-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #e74c3c;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-wrapper {
+            text-align: center;
+        }
+
+        .section-wrapper h2 {
+            margin: 0 auto 30px auto;
+        }
+
+        /* Speaker/Organizer cards */
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .person-card {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .person-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .person-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            background: #ddd;
+        }
+
+        .person-card h3 {
+            font-size: 18px;
+            margin: 10px 0 5px 0;
+            color: #2c3e50;
+        }
+
+        .person-card p {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin: 5px 0;
+        }
+
+        /* Schedule table */
+        .schedule-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 30px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .schedule-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .schedule-table th {
+            padding: 18px 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .schedule-table td {
+            padding: 18px 20px;
+            text-align: left;
+            border-bottom: 1px solid #e8e8e8;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .schedule-table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        .schedule-table tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .schedule-table tbody tr:hover {
+            background: #f0f7ff;
+            transform: scale(1.01);
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+        }
+
+        .schedule-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .schedule-table .time-col {
+            color: #667eea;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .schedule-table .event-col {
+            color: #2d3748;
+        }
+
+        .schedule-table .location-col {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .schedule-table .break-row {
+            background: #fff8e1 !important;
+        }
+
+        .schedule-table .keynote-row {
+            background: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .people-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #organizers div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
     </style>
 </head>
 
@@ -120,6 +288,11 @@
                 <div id="et-top-navigation" data-height="66" data-fixed-height="40">
                     <nav id="top-menu-nav">
                         <ul id="top-menu" class="nav">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#schedule">Schedule</a></li>
+                            <li><a href="#speakers">Speakers</a></li>
+                            <li><a href="#organizers">Organizers</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Previous Workshops </a>
                                 <ul class="dropdown-menu">
@@ -162,8 +335,8 @@
                     <div class="entry-content">
                         <div class="et-l et-l--post">
                             <div class="et_builder_inner_content et_pb_gutters3">
-                                <!-- ***************************************************** Workshop Brief ***************************************************** -->
-                                <div class="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular">
+                                <!-- ***************************************************** Hero Section ***************************************************** -->
+                                <div id="home" class="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular">
                                     <div class="et_pb_row et_pb_row_0 et_pb_equal_columns">
                                         <div
                                             class="et_pb_column et_pb_column_4_4 et_pb_column_0 et_pb_css_mix_blend_mode_passthrough et-last-child">
@@ -182,21 +355,16 @@
                                                     <p>
                                                         <span style="font-family: inherit; font-size: large">
                                                             NewInML will be held at NeurIPS 2025 on
-                                                            <span style="color: red">December 2</span>, 2025! 
-                                                            Location: <span style="color: red">San Diego</span>.
+                                                            <span style="color: red">Tuesday, December 3rd</span>, 2025!
+                                                            <br />
+                                                            Location: <span style="color: red">San Diego Convention Center
+                                                                — Room Upper 31ABC</span>
+                                                            <br />
+                                                            Time: <span style="color: red">12:00 PM – 7:00 PM</span>
                                                             <br /><br />
-                                                            
-                                                            <strong style="font-size: x-large; color: #ffd700;">
-                                                                🚧 Website Under Construction 🚧
-                                                            </strong>
-                                                            <br /><br />
-                                                            
-                                                            We are currently updating the website with more details. 
-                                                            <strong>Stay tuned!</strong>
-                                                            <br /><br />
-                                                            
+
                                                             If you have any questions, please contact us by:<br />
-                                                            📧 Email: <a href="mailto:contactnewinml@gmail.com" 
+                                                            📧 Email: <a href="mailto:contactnewinml@gmail.com"
                                                                 style="color: #90EE90;">contactnewinml@gmail.com</a><br />
                                                             💬 Discord: <a href="https://hovqr.to/981d36ee"
                                                                 target="_blank" rel="noopener noreferrer"
@@ -212,6 +380,203 @@
                                     </div>
                                 </div>
 
+                                <!-- ***************************************************** About Section ***************************************************** -->
+                                <section id="about" class="content-section">
+                                    <div class="section-wrapper">
+                                        <h2>About the Workshop</h2>
+                                    </div>
+                                    <div style="max-width: 900px; margin: 0 auto; text-align: left; line-height: 1.8; font-size: 16px;">
+                                        <p>
+                                            The <strong>New In ML Workshop</strong> provides a platform for newcomers to
+                                            machine learning research to present their work and connect with the broader ML
+                                            community. Our goal is to create an inclusive environment where early-career
+                                            researchers can share their ideas, receive constructive feedback, and build
+                                            lasting collaborations.
+                                        </p>
+                                        <p>
+                                            Join us for an inspiring day of talks, discussions, and networking opportunities
+                                            with leading researchers and peers who share your passion for machine learning!
+                                        </p>
+                                    </div>
+                                </section>
+
+                                <!-- ***************************************************** Schedule ***************************************************** -->
+                                <section id="schedule" class="content-section" style="background-color: #f8f9fa;">
+                                    <div class="section-wrapper">
+                                        <h2>Workshop Schedule</h2>
+                                    </div>
+                                    <p style="text-align: center; font-size: 20px; color: #34495e; margin-bottom: 10px;">
+                                        <strong>Tuesday, December 3rd, 2025</strong>
+                                    </p>
+                                    <p style="text-align: center; font-size: 18px; color: #7f8c8d; margin-bottom: 40px;">
+                                        12:00 PM – 7:00 PM | San Diego Convention Center — Room Upper 31ABC
+                                    </p>
+
+                                    <table class="schedule-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 20%;">Time</th>
+                                                <th style="width: 60%;">Event</th>
+                                                <th style="width: 20%;">Location</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="time-col">12:00 – 1:00 PM</td>
+                                                <td class="event-col">Introductions</td>
+                                                <td class="location-col">📍 Room Upper 31ABC</td>
+                                            </tr>
+                                            <tr class="keynote-row">
+                                                <td class="time-col">1:00 – 1:45 PM</td>
+                                                <td class="event-col"><strong>Keynote Talk 1:</strong> Irene Y. Chen<br><em style="color: #718096; font-size: 13px;">UC Berkeley & UCSF</em></td>
+                                                <td class="location-col">📍 Room Upper 31ABC</td>
+                                            </tr>
+                                            <tr class="break-row">
+                                                <td class="time-col">1:45 – 2:00 PM</td>
+                                                <td class="event-col">Q&A and Break</td>
+                                                <td class="location-col">📍 Room Upper 31ABC</td>
+                                            </tr>
+                                            <tr class="keynote-row">
+                                                <td class="time-col">2:00 – 2:45 PM</td>
+                                                <td class="event-col"><strong>Keynote Talk 2:</strong> Pavel Izmailov<br><em style="color: #718096; font-size: 13px;">New York University</em></td>
+                                                <td class="location-col">📍 Room Upper 31ABC</td>
+                                            </tr>
+                                            <tr class="break-row">
+                                                <td class="time-col">2:45 – 3:00 PM</td>
+                                                <td class="event-col">Q&A and Break</td>
+                                                <td class="location-col">📍 Room Upper 31ABC</td>
+                                            </tr>
+                                            <tr class="keynote-row">
+                                                <td class="time-col">3:00 – 3:45 PM</td>
+                                                <td class="event-col"><strong>Keynote Talk 3:</strong> Maksym Andriushchenko<br><em style="color: #718096; font-size: 13px;">ELLIS Institute Tübingen & Max Planck Institute</em></td>
+                                                <td class="location-col">📍 Room Upper 31ABC</td>
+                                            </tr>
+                                            <tr class="break-row" style="background: linear-gradient(135deg, #fff9e6 0%, #ffe8cc 100%) !important;">
+                                                <td class="time-col">3:45 – 4:15 PM</td>
+                                                <td class="event-col"><strong>☕ Half-Hour Break</strong></td>
+                                                <td class="location-col">📍 Room Upper 31ABC</td>
+                                            </tr>
+                                            <tr class="keynote-row">
+                                                <td class="time-col">4:15 – 5:00 PM</td>
+                                                <td class="event-col"><strong>Keynote Talk 4:</strong> Pratyusha Sharma<br><em style="color: #718096; font-size: 13px;">Microsoft Research & New York University</em></td>
+                                                <td class="location-col">📍 Room Upper 31ABC</td>
+                                            </tr>
+                                            <tr class="break-row">
+                                                <td class="time-col">5:00 – 5:15 PM</td>
+                                                <td class="event-col">Q&A and Break</td>
+                                                <td class="location-col">📍 Room Upper 31ABC</td>
+                                            </tr>
+                                            <tr class="keynote-row">
+                                                <td class="time-col">5:15 – 6:00 PM</td>
+                                                <td class="event-col"><strong>Keynote Talk 5:</strong> Haifeng Xu<br><em style="color: #718096; font-size: 13px;">University of Chicago</em></td>
+                                                <td class="location-col">📍 Room Upper 31ABC</td>
+                                            </tr>
+                                            <tr class="break-row">
+                                                <td class="time-col">6:00 – 6:15 PM</td>
+                                                <td class="event-col">Q&A and Break</td>
+                                                <td class="location-col">📍 Room Upper 31ABC</td>
+                                            </tr>
+                                            <tr style="background: linear-gradient(135deg, #e6f3ff 0%, #cce6ff 100%) !important;">
+                                                <td class="time-col">6:15 – 7:00 PM</td>
+                                                <td class="event-col"><strong>Closing Session</strong></td>
+                                                <td class="location-col">📍 Room Upper 31ABC</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+
+                                <!-- ***************************************************** Speakers ***************************************************** -->
+                                <section id="speakers" class="content-section">
+                                    <div class="section-wrapper">
+                                        <h2>Keynote Speakers</h2>
+                                    </div>
+
+                                    <div class="people-grid">
+                                        <div class="person-card">
+                                            <img src="./img/irene_y_chen.jpg"
+                                                alt="Irene Y. Chen">
+                                            <h3>Irene Y. Chen</h3>
+                                            <p>University of California, Berkeley & UC San Francisco</p>
+                                        </div>
+
+                                        <div class="person-card">
+                                            <img src="./img/pavel-alaska.jpeg"
+                                                alt="Pavel Izmailov">
+                                            <h3>Pavel Izmailov</h3>
+                                            <p>New York University</p>
+                                        </div>
+
+                                        <div class="person-card">
+                                            <img src="./img/maksym_andriushchenko .jpg"
+                                                alt="Maksym Andriushchenko">
+                                            <h3>Maksym Andriushchenko</h3>
+                                            <p>ELLIS Institute Tübingen & Max Planck Institute</p>
+                                        </div>
+
+                                        <div class="person-card">
+                                            <img src="./img/pratyusha_sharma.jpeg"
+                                                alt="Pratyusha Sharma">
+                                            <h3>Pratyusha Sharma</h3>
+                                            <p>Microsoft Research & New York University</p>
+                                        </div>
+
+                                        <div class="person-card">
+                                            <img src="./img/haifeng_xu.png"
+                                                alt="Haifeng Xu">
+                                            <h3>Haifeng Xu</h3>
+                                            <p>University of Chicago</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- ***************************************************** Organizers ***************************************************** -->
+                                <section id="organizers" class="content-section" style="background-color: #f8f9fa; padding: 40px 20px;">
+                                    <div class="section-wrapper">
+                                        <h2>Organizers</h2>
+                                    </div>
+
+                                    <div style="max-width: 1000px; margin: 0 auto;">
+                                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 30px; text-align: center;">
+                                            <div style="padding: 10px; font-size: 15px;">
+                                                <strong>Zhen (Zach) Xu</strong><br>
+                                                <span style="color: #718096; font-size: 14px;">University of Chicago</span>
+                                            </div>
+                                            <div style="padding: 10px; font-size: 15px;">
+                                                <strong>Arian Khorasani</strong><br>
+                                                <span style="color: #718096; font-size: 14px;">University of Montreal</span>
+                                            </div>
+                                            <div style="padding: 10px; font-size: 15px;">
+                                                <strong>Shashank Galla</strong><br>
+                                                <span style="color: #718096; font-size: 14px;">Texas A&M University</span>
+                                            </div>
+                                            <div style="padding: 10px; font-size: 15px;">
+                                                <strong>Iñigo</strong><br>
+                                                <span style="color: #718096; font-size: 14px;">UC Berkeley</span>
+                                            </div>
+                                            <div style="padding: 10px; font-size: 15px;">
+                                                <strong>Ching Lam</strong><br>
+                                                <span style="color: #718096; font-size: 14px;">MIT</span>
+                                            </div>
+                                            <div style="padding: 10px; font-size: 15px;">
+                                                <strong>Tianyu Zhang</strong><br>
+                                                <span style="color: #718096; font-size: 14px;">MILA</span>
+                                            </div>
+                                            <div style="padding: 10px; font-size: 15px;">
+                                                <strong>Lu Li</strong><br>
+                                                <span style="color: #718096; font-size: 14px;">UPenn</span>
+                                            </div>
+                                            <div style="padding: 10px; font-size: 15px;">
+                                                <strong>Chenghao Yang</strong><br>
+                                                <span style="color: #718096; font-size: 14px;">UChicago</span>
+                                            </div>
+                                            <div style="padding: 10px; font-size: 15px;">
+                                                <strong>ZNR</strong><br>
+                                                <span style="color: #718096; font-size: 14px;">University of Windsor</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
                             </div>
                         </div>
                     </div>
@@ -220,7 +585,13 @@
 
             <footer id="main-footer">
                 <div id="footer-bottom">
-                    <div class="container clearfix"></div>
+                    <div class="container clearfix">
+                        <p style="text-align: center; padding: 20px; color: #7f8c8d;">
+                            © 2025 New In ML Workshop at NeurIPS 2025 | Contact: <a
+                                href="mailto:contactnewinml@gmail.com"
+                                style="color: #3498db;">contactnewinml@gmail.com</a>
+                        </p>
+                    </div>
                 </div>
             </footer>
         </div>
@@ -309,4 +680,3 @@
 </body>
 
 </html>
-
