@@ -126,6 +126,80 @@
         }
         .badge-inperson { background: #d4edda; color: #155724; }
         .badge-remote   { background: #d1ecf1; color: #0c5460; }
+
+        /* ===== Enhanced Card & Grid Styling ===== */
+        .person-card {
+            text-align: center;
+            padding: 18px 10px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border-radius: 16px;
+            background: #fff;
+        }
+        .person-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 14px 36px rgba(102,126,234,0.22);
+        }
+        .person-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top center;
+            border: 4px solid #764ba2;
+            margin: 0 auto 12px;
+            display: block;
+            box-shadow: 0 4px 18px rgba(118,75,162,0.28);
+        }
+        .person-name {
+            font-size: 1rem !important;
+            font-weight: 700 !important;
+            margin: 6px 0 3px !important;
+            line-height: 1.3;
+        }
+        .person-name a { color: #2c3e50 !important; text-decoration: none !important; }
+        .person-name a:hover { color: #764ba2 !important; }
+        .person-affil { font-size: 0.82rem; color: #666; margin: 0; }
+        /* Speakers grid: 4 columns */
+        .speakers-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 28px;
+            padding: 24px 10px 36px;
+        }
+        .speakers-grid .person-card { flex: 0 0 200px; max-width: 210px; }
+        /* Organizers grid: 6 columns */
+        .organizers-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 22px;
+            padding: 16px 10px 30px;
+        }
+        .organizers-grid .person-card { flex: 0 0 155px; max-width: 165px; }
+        .organizers-grid .person-photo { width: 110px; height: 110px; }
+        /* Submit button */
+        .submit-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff !important;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none !important;
+            transition: opacity 0.2s, transform 0.2s;
+            margin: 12px 0 6px;
+            box-shadow: 0 4px 16px rgba(118,75,162,0.4);
+        }
+        .submit-btn:hover { opacity: 0.88; transform: translateY(-2px); }
+        @media (max-width: 768px) {
+            .speakers-grid .person-card { flex: 0 0 calc(50% - 28px); }
+            .organizers-grid .person-card { flex: 0 0 calc(33% - 22px); }
+        }
+        @media (max-width: 480px) {
+            .speakers-grid .person-card, .organizers-grid .person-card { flex: 0 0 calc(50% - 20px); }
+        }
     </style>
 </head>
 
@@ -208,9 +282,8 @@
                                                     <p>
                                                         <span style="font-size: large">
                                                             NewInML will be held at NeurIPS 2026.
-                                                            <span style="color: red">Date, time, and location: To Be Announced.</span>
+                                                            <span style="color: #FFD700; font-size: 1.1rem;">📍 Paris, France &nbsp;|&nbsp; 🗓️ Date &amp; Time: To Be Announced</span>
                                                             <br /><br />
-                                                            100% submissions will be accepted and will get high quality reviews from reviewers.
                                                             We are here to help! The submissions are non archival.
                                                             Feel free to submit elsewhere in the future!
                                                             We are updating the website frequently. Stay tuned!
@@ -276,14 +349,12 @@
                                                 <div class="et_pb_module et_pb_text et_pb_text_3 et_pb_text_align_left et_pb_bg_layout_light">
                                                     <ul style="text-align: justify; font-size: medium">
                                                         <li>Submission deadline: <strong>TBD</strong></li>
-                                                        <li>Submission link: <strong>TBD (OpenReview)</strong></li>
+                                                        <li>Submission link: <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/NewInML" target="_blank" rel="noopener noreferrer" style="color:#764ba2;font-weight:700;">OpenReview ↗</a></li>
                                                         <li>Submission format: NeurIPS template (<strong>TBD</strong>)</li>
                                                         <li>Review Anonymity: Double blind</li>
                                                         <li>All requirements, including the page limit, follow NeurIPS main conference guidelines.</li>
                                                     </ul>
-                                                    <p style="text-align: justify">
-                                                        <span style="font-size: medium">This workshop WILL NOT reject any submissions. All submitted papers will receive constructive comments from reviewers, who will provide suggestions for improvement. This process allows authors to become more familiar with the submission and review workflow.</span>
-                                                    </p>
+
                                                     <p style="text-align: justify">
                                                         <span style="font-size: medium">
                                                             What to do when you receive the results: since we have a large enough room, we hope everyone can benefit from the workshop by receiving feedback and having the opportunity to showcase their work. This will help participants further improve their research toward meeting main conference standards in the future. Therefore, we have decided:
@@ -309,125 +380,52 @@
                                                     <h1><b>Invited Speakers</b></h1>
                                                 </div>
                                             </div>
-                                            <div class="et_pb_module et_pb_text et_pb_text_5 et_pb_text_align_left et_pb_bg_layout_light"></div>
                                         </div>
                                     </div>
 
-                                    <!-- In-Person label -->
-                                    <div class="et_pb_row" style="padding-top: 10px; padding-bottom: 5px;">
+                                    <div class="et_pb_row">
                                         <div class="et_pb_column et_pb_column_4_4 et_pb_css_mix_blend_mode_passthrough et-last-child">
-                                            <div class="et_pb_module et_pb_text et_pb_text_align_left et_pb_bg_layout_light">
-                                                <div class="et_pb_text_inner">
-                                                    <h2 style="font-size: large; color: #444; border-bottom: 2px solid #ccc; padding-bottom: 6px; margin-bottom: 4px;">🏛️ In-Person</h2>
+
+                                            <div class="speakers-grid">
+
+                                                <!-- Zhijing Jin -->
+                                                <div class="person-card">
+                                                    <a href="https://zhijing-jin.com/home/" target="_blank" rel="noopener noreferrer">
+                                                        <img class="person-photo" src="./img/zhijing_jin.jpg" alt="Zhijing Jin">
+                                                    </a>
+                                                    <p class="person-name"><a href="https://zhijing-jin.com/home/" target="_blank" rel="noopener noreferrer">Zhijing Jin</a></p>
+                                                    <p class="person-affil">Max Planck Institute &amp; ETH Zurich</p>
                                                 </div>
+
+                                                <!-- Judah Goldfeder -->
+                                                <div class="person-card">
+                                                    <a href="https://judahgoldfeder.com/" target="_blank" rel="noopener noreferrer">
+                                                        <img class="person-photo" src="./img/judah_goldfeder.jpg" alt="Judah Goldfeder">
+                                                    </a>
+                                                    <p class="person-name"><a href="https://judahgoldfeder.com/" target="_blank" rel="noopener noreferrer">Judah Goldfeder</a></p>
+                                                    <p class="person-affil">Columbia University</p>
+                                                </div>
+
+                                                <!-- Stella Biderman -->
+                                                <div class="person-card">
+                                                    <a href="https://www.stellabiderman.ai/" target="_blank" rel="noopener noreferrer">
+                                                        <img class="person-photo" src="./img/stella_biderman.jpg" alt="Stella Biderman">
+                                                    </a>
+                                                    <p class="person-name"><a href="https://www.stellabiderman.ai/" target="_blank" rel="noopener noreferrer">Stella Biderman</a></p>
+                                                    <p class="person-affil">EleutherAI</p>
+                                                </div>
+
+                                                <!-- Niloofar Mireshghallah -->
+                                                <div class="person-card">
+                                                    <a href="https://mireshghallah.github.io/" target="_blank" rel="noopener noreferrer">
+                                                        <img class="person-photo" src="./img/niloofar_mireshghallah.jpg" alt="Niloofar Mireshghallah">
+                                                    </a>
+                                                    <p class="person-name"><a href="https://mireshghallah.github.io/" target="_blank" rel="noopener noreferrer">Niloofar Mireshghallah</a></p>
+                                                    <p class="person-affil">humans&amp; / CMU</p>
+                                                </div>
+
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <!-- In-Person: Zhijing Jin, Judah Goldfeder, Stella Biderman -->
-                                    <div class="et_pb_row et_pb_row_3">
-
-                                        <!-- Zhijing Jin -->
-                                        <div class="et_pb_column et_pb_column_1_5 et_pb_column_3 et_pb_css_mix_blend_mode_passthrough">
-                                            <div class="et_pb_module et_pb_image et_pb_image_1 et_animated et-waypoint">
-                                                <a href="https://zhijing-jin.com/home/" target="_blank"><span class="et_pb_image_wrap has-box-shadow-overlay">
-                                                    <div class="box-shadow-overlay"></div>
-                                                    <div class="speaker-placeholder"><span>ZJ</span></div>
-                                                </span></a>
-                                            </div>
-                                            <div class="et_pb_module et_pb_text et_pb_text_7 et_pb_text_align_center et_pb_bg_layout_light">
-                                                <div class="et_pb_text_inner">
-                                                    <h3><b><a href="https://zhijing-jin.com/home/" target="_blank" style="color: inherit; text-decoration: none;">Zhijing Jin</a></b></h3>
-                                                    <p><span style="font-weight: 400">Max Planck Institute &amp; ETH Zurich</span></p>
-                                                    <span class="speaker-badge badge-inperson">In-Person</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Judah Goldfeder -->
-                                        <div class="et_pb_column et_pb_column_1_5 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough">
-                                            <div class="et_pb_module et_pb_image et_pb_image_0 et_animated et-waypoint">
-                                                <a href="https://judahgoldfeder.com/" target="_blank"><span class="et_pb_image_wrap has-box-shadow-overlay">
-                                                    <div class="box-shadow-overlay"></div>
-                                                    <div class="speaker-placeholder"><span>JG</span></div>
-                                                </span></a>
-                                            </div>
-                                            <div class="et_pb_module et_pb_text et_pb_text_6 et_pb_text_align_center et_pb_bg_layout_light">
-                                                <div class="et_pb_text_inner">
-                                                    <h3><b><a href="https://judahgoldfeder.com/" target="_blank" style="color: inherit; text-decoration: none;">Judah Goldfeder</a></b></h3>
-                                                    <p><span style="font-weight: 400">Columbia University</span></p>
-                                                    <span class="speaker-badge badge-inperson">In-Person</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Stella Biderman -->
-                                        <div class="et_pb_column et_pb_column_1_5 et_pb_column_3 et_pb_css_mix_blend_mode_passthrough">
-                                            <div class="et_pb_module et_pb_image et_pb_image_0 et_animated et-waypoint">
-                                                <a href="https://www.stellabiderman.ai/" target="_blank"><span class="et_pb_image_wrap has-box-shadow-overlay">
-                                                    <div class="box-shadow-overlay"></div>
-                                                    <div class="speaker-placeholder"><span>SB</span></div>
-                                                </span></a>
-                                            </div>
-                                            <div class="et_pb_module et_pb_text et_pb_text_6 et_pb_text_align_center et_pb_bg_layout_light">
-                                                <div class="et_pb_text_inner">
-                                                    <h3><b><a href="https://www.stellabiderman.ai/" target="_blank" style="color: inherit; text-decoration: none;">Stella Biderman</a></b></h3>
-                                                    <p><span style="font-weight: 400">EleutherAI</span></p>
-                                                    <span class="speaker-badge badge-inperson">In-Person</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <!-- Remote label -->
-                                    <div class="et_pb_row" style="padding-top: 20px; padding-bottom: 5px;">
-                                        <div class="et_pb_column et_pb_column_4_4 et_pb_css_mix_blend_mode_passthrough et-last-child">
-                                            <div class="et_pb_module et_pb_text et_pb_text_align_left et_pb_bg_layout_light">
-                                                <div class="et_pb_text_inner">
-                                                    <h2 style="font-size: large; color: #444; border-bottom: 2px solid #ccc; padding-bottom: 6px; margin-bottom: 4px;">💻 Remote</h2>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Remote: Natasha Jacques, Nathan Lambert -->
-                                    <div class="et_pb_row et_pb_row_3">
-
-                                        <!-- Natasha Jacques -->
-                                        <div class="et_pb_column et_pb_column_1_5 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough">
-                                            <div class="et_pb_module et_pb_image et_pb_image_1 et_animated et-waypoint">
-                                                <a href="https://natashajaques.ai/" target="_blank"><span class="et_pb_image_wrap has-box-shadow-overlay">
-                                                    <div class="box-shadow-overlay"></div>
-                                                    <div class="speaker-placeholder"><span>NJ</span></div>
-                                                </span></a>
-                                            </div>
-                                            <div class="et_pb_module et_pb_text et_pb_text_7 et_pb_text_align_center et_pb_bg_layout_light">
-                                                <div class="et_pb_text_inner">
-                                                    <h3><b><a href="https://natashajaques.ai/" target="_blank" style="color: inherit; text-decoration: none;">Natasha Jacques</a></b></h3>
-                                                    <p><span style="font-weight: 400">UC Berkeley</span></p>
-                                                    <span class="speaker-badge badge-remote">Remote</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Nathan Lambert -->
-                                        <div class="et_pb_column et_pb_column_1_5 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough">
-                                            <div class="et_pb_module et_pb_image et_pb_image_1 et_animated et-waypoint">
-                                                <a href="https://natolambert.com/" target="_blank"><span class="et_pb_image_wrap has-box-shadow-overlay">
-                                                    <div class="box-shadow-overlay"></div>
-                                                    <div class="speaker-placeholder"><span>NL</span></div>
-                                                </span></a>
-                                            </div>
-                                            <div class="et_pb_module et_pb_text et_pb_text_7 et_pb_text_align_center et_pb_bg_layout_light">
-                                                <div class="et_pb_text_inner">
-                                                    <h3><b><a href="https://natolambert.com/" target="_blank" style="color: inherit; text-decoration: none;">Nathan Lambert</a></b></h3>
-                                                    <p><span style="font-weight: 400">Allen Institute for AI (Ai2)</span></p>
-                                                    <span class="speaker-badge badge-remote">Remote (Probable)</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </div>
 
@@ -437,7 +435,7 @@
                                         <div class="et_pb_column et_pb_column_4_4 et_pb_column_39 et_pb_css_mix_blend_mode_passthrough et-last-child">
                                             <div class="et_pb_module et_pb_text et_pb_text_95 et_pb_text_align_left et_pb_bg_layout_light">
                                                 <div class="et_pb_text_inner">
-                                                    <h1><b>Program Chairs</b></h1>
+                                                    <h1><b>Organizers</b></h1>
                                                 </div>
                                             </div>
                                             <div class="et_pb_module et_pb_divider et_pb_divider_3 et_pb_divider_position_center et_pb_space">
@@ -448,58 +446,63 @@
                                     </div>
 
                                     <div class="et_pb_row et_pb_row_22">
-                                        <!-- Placeholder 1 -->
-                                        <div class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
-                                            <div class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
-                                                <div class="et_pb_text_inner">
-                                                    <h3><span style="font-size: medium"><a href="#"><b>TBD</b></a></span></h3>
-                                                    <p><span style="font-weight: 400; font-size: medium; color: #7e7f93;">TBD</span></p>
+                                        <div class="et_pb_column et_pb_column_4_4 et_pb_css_mix_blend_mode_passthrough et-last-child">
+                                            <div class="organizers-grid">
+
+                                                <!-- Arian Khorasani -->
+                                                <div class="person-card">
+                                                    <a href="https://sites.google.com/view/ariankhorasani/home" target="_blank" rel="noopener noreferrer">
+                                                        <img class="person-photo" src="./img/arian_khorasani.jpg" alt="Arian Khorasani">
+                                                    </a>
+                                                    <p class="person-name"><a href="https://sites.google.com/view/ariankhorasani/home" target="_blank" rel="noopener noreferrer">Arian Khorasani</a></p>
+                                                    <p class="person-affil">University of Toronto &amp; Vector Institute</p>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <!-- Placeholder 2 -->
-                                        <div class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
-                                            <div class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
-                                                <div class="et_pb_text_inner">
-                                                    <h3><span style="font-size: medium"><a href="#"><b>TBD</b></a></span></h3>
-                                                    <p><span style="font-weight: 400; font-size: medium; color: #7e7f93;">TBD</span></p>
+
+                                                <!-- Shashank Galla -->
+                                                <div class="person-card">
+                                                    <a href="https://sites.google.com/tamu.edu/shashankgalla/" target="_blank" rel="noopener noreferrer">
+                                                        <img class="person-photo" src="./img/shashank_galla.jpg" alt="Shashank Galla">
+                                                    </a>
+                                                    <p class="person-name"><a href="https://sites.google.com/tamu.edu/shashankgalla/" target="_blank" rel="noopener noreferrer">Shashank Galla</a></p>
+                                                    <p class="person-affil">Texas A&amp;M University</p>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <!-- Placeholder 3 -->
-                                        <div class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
-                                            <div class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
-                                                <div class="et_pb_text_inner">
-                                                    <h3><span style="font-size: medium"><a href="#"><b>TBD</b></a></span></h3>
-                                                    <p><span style="font-weight: 400; font-size: medium; color: #7e7f93;">TBD</span></p>
+
+                                                <!-- Zarreen Reza -->
+                                                <div class="person-card">
+                                                    <a href="https://ai-diary-by-znreza.com/" target="_blank" rel="noopener noreferrer">
+                                                        <img class="person-photo" src="./img/zarreen_reza.jpg" alt="Zarreen Reza">
+                                                    </a>
+                                                    <p class="person-name"><a href="https://ai-diary-by-znreza.com/" target="_blank" rel="noopener noreferrer">Zarreen Reza</a></p>
+                                                    <p class="person-affil">JACOBB Applied AI Center</p>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <!-- Placeholder 4 -->
-                                        <div class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
-                                            <div class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
-                                                <div class="et_pb_text_inner">
-                                                    <h3><span style="font-size: medium"><a href="#"><b>TBD</b></a></span></h3>
-                                                    <p><span style="font-weight: 400; font-size: medium; color: #7e7f93;">TBD</span></p>
+
+                                                <!-- Arth Singh -->
+                                                <div class="person-card">
+                                                    <a href="https://www.arthsingh.com/" target="_blank" rel="noopener noreferrer">
+                                                        <img class="person-photo" src="./img/arth_singh.jpg" alt="Arth Singh">
+                                                    </a>
+                                                    <p class="person-name"><a href="https://www.arthsingh.com/" target="_blank" rel="noopener noreferrer">Arth Singh</a></p>
+                                                    <p class="person-affil">AIM Intelligence</p>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <!-- Placeholder 5 -->
-                                        <div class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
-                                            <div class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
-                                                <div class="et_pb_text_inner">
-                                                    <h3><span style="font-size: medium"><a href="#"><b>TBD</b></a></span></h3>
-                                                    <p><span style="font-weight: 400; font-size: medium; color: #7e7f93;">TBD</span></p>
+
+                                                <!-- I&#241;igo Parra -->
+                                                <div class="person-card">
+                                                    <a href="https://iparramartin.github.io/" target="_blank" rel="noopener noreferrer">
+                                                        <img class="person-photo" src="./img/inigo_parra.jpg" alt="I&#241;igo Parra">
+                                                    </a>
+                                                    <p class="person-name"><a href="https://iparramartin.github.io/" target="_blank" rel="noopener noreferrer">I&#241;igo Parra</a></p>
+                                                    <p class="person-affil">UC Berkeley</p>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <!-- Placeholder 6 -->
-                                        <div class="et_pb_column et_pb_column_1_6 et_pb_column_41 et_pb_css_mix_blend_mode_passthrough">
-                                            <div class="et_pb_module et_pb_text et_pb_text_98 et_clickable et_pb_text_align_center et_pb_bg_layout_light">
-                                                <div class="et_pb_text_inner">
-                                                    <h3><span style="font-size: medium"><a href="#"><b>TBD</b></a></span></h3>
-                                                    <p><span style="font-weight: 400; font-size: medium; color: #7e7f93;">TBD</span></p>
+
+                                                <!-- Veeraraju Elluru -->
+                                                <div class="person-card">
+                                                    <a href="https://veeraraju-e.github.io/portfolio/" target="_blank" rel="noopener noreferrer">
+                                                        <img class="person-photo" src="./img/veeraraju_elluru.jpg" alt="Veeraraju Elluru">
+                                                    </a>
+                                                    <p class="person-name"><a href="https://veeraraju-e.github.io/portfolio/" target="_blank" rel="noopener noreferrer">Veeraraju Elluru</a></p>
+                                                    <p class="person-affil">IIT Jodhpur</p>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
