@@ -200,6 +200,35 @@
         @media (max-width: 480px) {
             .speakers-grid .person-card, .organizers-grid .person-card { flex: 0 0 calc(50% - 20px); }
         }
+        /* Important dates timeline */
+        .dates-timeline { list-style: none; padding: 0; margin: 16px 0; }
+        .dates-timeline li {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 11px 18px;
+            margin: 6px 0;
+            background: #f8f6fe;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+            font-size: 0.95rem;
+        }
+        .dates-tbd { font-weight: 700; color: #764ba2; min-width: 80px; }
+        /* Submission guidelines */
+        .guidelines-list { list-style: none; padding: 0; margin: 12px 0 20px; }
+        .guidelines-list li { display: flex; gap: 10px; align-items: flex-start; padding: 5px 0; font-size: 0.95rem; }
+        .guidelines-list li::before { content: "\2713"; color: #764ba2; font-weight: 700; flex-shrink: 0; }
+        /* Panel TBD */
+        .panel-tbd-box {
+            text-align: center;
+            padding: 44px 20px;
+            background: #f8f6fe;
+            border-radius: 14px;
+            border: 2px dashed #c4b5f5;
+            margin: 20px 0;
+            color: #888;
+        }
+        .panel-tbd-box p { margin: 6px 0; }
     </style>
 </head>
 
@@ -344,25 +373,35 @@
 
                                             <div class="et_pb_module et_pb_text et_pb_text_2 et_pb_text_align_left et_pb_bg_layout_light">
                                                 <div class="et_pb_text_inner">
-                                                    <h1><b>Submission <span style="color: #000000">Information</span></b></h1>
+                                                    <h1><b>Call for Papers</b></h1>
                                                 </div>
                                                 <div class="et_pb_module et_pb_text et_pb_text_3 et_pb_text_align_left et_pb_bg_layout_light">
-                                                    <ul style="text-align: justify; font-size: medium">
-                                                        <li>Submission deadline: <strong>TBD</strong></li>
-                                                        <li>Submission link: <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/NewInML" target="_blank" rel="noopener noreferrer" style="color:#764ba2;font-weight:700;">OpenReview ↗</a></li>
-                                                        <li>Submission format: NeurIPS template (<strong>TBD</strong>)</li>
-                                                        <li>Review Anonymity: Double blind</li>
-                                                        <li>All requirements, including the page limit, follow NeurIPS main conference guidelines.</li>
+                                                    <p style="font-size: medium; text-align: justify; margin-bottom: 16px;">
+                                                        We invite submissions on all topics in machine learning. This workshop is especially designed for researchers who have not yet published at a top venue &mdash; we want to help you get there!
+                                                        The best papers will receive oral presentations and awards. All accepted papers will be presented as posters.
+                                                    </p>
+
+                                                    <h3 style="margin-top:20px; margin-bottom:8px; color:#764ba2;">Submission Guidelines</h3>
+                                                    <ul class="guidelines-list">
+                                                        <li><strong>Format:</strong> 2&ndash;8 pages (excluding references) using the NeurIPS 2026 workshop template (details TBA).</li>
+                                                        <li><strong>Review process:</strong> Double-blind via <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/NewInML" target="_blank" rel="noopener noreferrer" style="color:#764ba2;">OpenReview ↗</a>. Please fully anonymize your submission.</li>
+                                                        <li><strong>Non-archival:</strong> Work may be submitted to or published at other venues concurrently.</li>
+                                                        <li><strong>Eligibility:</strong> Open to anyone who has not yet published at a top ML conference (NeurIPS, ICML, ICLR, etc.).</li>
+                                                        <li><strong>Accepted posters:</strong> Authors are strongly encouraged to present a poster on-site at the workshop.</li>
                                                     </ul>
 
-                                                    <p style="text-align: justify">
-                                                        <span style="font-size: medium">
-                                                            What to do when you receive the results: since we have a large enough room, we hope everyone can benefit from the workshop by receiving feedback and having the opportunity to showcase their work. This will help participants further improve their research toward meeting main conference standards in the future. Therefore, we have decided:
-                                                            <ul style="text-align: justify; font-size: medium;">
-                                                                <li>Papers marked as "Accepted (Poster)" are strongly encouraged to bring a poster on-site at our workshop, as the reviewers believe these papers are already mature enough to be presented.</li>
-                                                                <li>For papers marked as "Accepted", if you feel your work is also ready for discussion and you would like to share it and receive feedback, you are very welcome to present a poster on-site at our workshop as well.</li>
-                                                            </ul>
-                                                        </span>
+                                                    <h3 style="margin-top:24px; margin-bottom:10px; color:#764ba2;">Important Dates</h3>
+                                                    <p style="font-size:0.85rem; color:#888; margin-bottom:8px;">All deadlines are 11:59 PM Anywhere on Earth (AoE). Exact dates TBD.</p>
+                                                    <ul class="dates-timeline">
+                                                        <li><span class="dates-tbd">TBD</span><span>Submission Portal Opens</span></li>
+                                                        <li><span class="dates-tbd">TBD</span><span>Paper Submission Deadline</span></li>
+                                                        <li><span class="dates-tbd">TBD</span><span>Author Notification</span></li>
+                                                        <li><span class="dates-tbd">TBD</span><span>Camera Ready Deadline</span></li>
+                                                        <li><span class="dates-tbd">TBD</span><span>Workshop Date &mdash; Paris, France</span></li>
+                                                    </ul>
+
+                                                    <p style="margin-top:20px;">
+                                                        <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/NewInML" target="_blank" rel="noopener noreferrer" class="submit-btn">Submit on OpenReview ↗</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -394,7 +433,7 @@
                                                         <img class="person-photo" src="./img/zhijing_jin.jpg" alt="Zhijing Jin">
                                                     </a>
                                                     <p class="person-name"><a href="https://zhijing-jin.com/home/" target="_blank" rel="noopener noreferrer">Zhijing Jin</a></p>
-                                                    <p class="person-affil">Max Planck Institute &amp; ETH Zurich</p>
+                                                    <p class="person-affil">University of Toronto, Max Planck Institute</p>
                                                 </div>
 
                                                 <!-- Judah Goldfeder -->
@@ -424,6 +463,42 @@
                                                     <p class="person-affil">humans&amp; / CMU</p>
                                                 </div>
 
+                                                <!-- Natasha Jacques -->
+                                                <div class="person-card">
+                                                    <a href="https://natashajaques.ai/" target="_blank" rel="noopener noreferrer">
+                                                        <img class="person-photo" src="./img/natasha_jacques.jpg" alt="Natasha Jacques">
+                                                    </a>
+                                                    <p class="person-name"><a href="https://natashajaques.ai/" target="_blank" rel="noopener noreferrer">Natasha Jacques</a></p>
+                                                    <p class="person-affil">UC Berkeley</p>
+                                                </div>
+
+                                                <!-- Nathan Lambert -->
+                                                <div class="person-card">
+                                                    <a href="https://natolambert.com/" target="_blank" rel="noopener noreferrer">
+                                                        <img class="person-photo" src="./img/nathan_lambert.jpg" alt="Nathan Lambert">
+                                                    </a>
+                                                    <p class="person-name"><a href="https://natolambert.com/" target="_blank" rel="noopener noreferrer">Nathan Lambert</a></p>
+                                                    <p class="person-affil">Allen Institute for AI (Ai2)</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ===== Section 3: Panel ===== -->
+                                <div class="et_pb_section et_pb_section_3 et_section_regular">
+                                    <div class="et_pb_row">
+                                        <div class="et_pb_column et_pb_column_4_4 et_pb_css_mix_blend_mode_passthrough et-last-child">
+                                            <div class="et_pb_module et_pb_text et_pb_text_align_left et_pb_bg_layout_light">
+                                                <div class="et_pb_text_inner">
+                                                    <h1><b>Panel</b></h1>
+                                                    <div class="panel-tbd-box">
+                                                        <p style="font-size:2rem; margin-bottom:10px;">&#127908;</p>
+                                                        <p style="font-size:1.1rem; font-weight:600; color:#555;">Panelists to be announced</p>
+                                                        <p style="font-size:0.9rem; margin-top:6px;">We will update this section once the panelists are confirmed. Stay tuned!</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
